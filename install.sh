@@ -59,32 +59,42 @@ echo "Configuration file";
 echo "[NIXIE]" >> $config_file
 
 echo "Server name/id";
-read keyboard
-echo "server_id=$keyboard" >> $config_file
+read server_id
+echo "server_id=$server_id" >> $config_file
 echo " ";
 echo "SQL User  : ";
-read keyboard
-echo "sql_user=$keyboard" >> $config_file
+read sql_user
+echo "sql_user=$sql_user" >> $config_file
 echo " ";
 echo "SQL Pass  : ";
-read keyboard
-echo "sql_pass=$keyboard" >> $config_file
+read sql_pass
+echo "sql_pass=$sql_pass" >> $config_file
 echo " ";
 echo "SQL Host  : ";
-read keyboard
-echo "sql_host=$keyboard" >> $config_file
+read sql_host
+echo "sql_host=$sql_host" >> $config_file
 echo " ";
 echo "SQL table : ";
-read keyboard
-echo "sql_table=$keyboard" >> $config_file
+read sql_table
+echo "sql_table=$sql_table" >> $config_file
 echo " ";
+
+echo "Testing the SQL connection and if the table exist...";
+
+#RESULT=`mysqlshow --user=$sql_user --password=$sql_pass $sql_table --host=$sql_host| grep -v server | grep -o $sql_table`
+#if [ "$RESULT" == "myDatabase" ]; then
+#    echo YES
+#fi
+#else if
+
+
 echo "Refresh data logger / sec : ";
-read keyboard
-echo "refresh_data=$keyboard" >> $config_file
+read update_logger
+echo "refresh_data=$update_logger" >> $config_file
 echo " ";
-echo "Update er / sec : ";
-read keyboard
-echo "refresh_data=$keyboard" >> $config_file
+echo "Update Nixie software/min : ";
+read update_nixie
+echo "refresh_data=$update_nixie" >> $config_file
 echo " ";
 echo " ";
 
