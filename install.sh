@@ -60,19 +60,33 @@ echo "Server name/id";
 read keyboard
 echo "server_id=$keyboard" >> conf.ini
 
-
-echo "SQL User";
+echo " ";
+echo "SQL User  : ";
 read keyboard
 echo "sql_user=$keyboard" >> conf.ini
-
-echo "SQL Pass";
+echo " ";
+echo "SQL Pass  : ";
 read keyboard
 echo "sql_pass=$keyboard" >> conf.ini
-
-echo "SQL Host";
+echo " ";
+echo "SQL Host  : ";
 read keyboard
 echo "sql_host=$keyboard" >> conf.ini
-
-echo "SQL table";
+echo " ";
+echo "SQL table : ";
 read keyboard
 echo "sql_table=$keyboard" >> conf.ini
+echo " ";
+echo "Refresh data logger / sec : ";
+read keyboard
+echo "refresh_data=$keyboard" >> conf.ini
+echo " ";
+echo " ";
+while true; do
+    read -p "Enable the the data logger ? : " yn
+    case $yn in
+        [Yy]* ) echo "logger_enable=True"; break;;
+        [Nn]* ) echo "logger_enable=False"; break;;
+        * ) echo "Please answer yes or no.";;
+esac
+
