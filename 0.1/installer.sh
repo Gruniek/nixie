@@ -42,9 +42,9 @@ fi
 echo "Installing Nixie into /opt/nixie";
 mkdir /opt/nixie
 cd /opt/nixie
-wget https://raw.githubusercontent.com/Gruniek/nixie/master/$version/nixie.sh
-wget https://raw.githubusercontent.com/Gruniek/nixie/master/$version/deamon.sh
-wget https://raw.githubusercontent.com/Gruniek/nixie/master/$version/get_data.sh
+wget https://raw.githubusercontent.com/Gruniek/nixie/master/0.1/nixie.sh
+wget https://raw.githubusercontent.com/Gruniek/nixie/master/0.1/deamon.sh
+wget https://raw.githubusercontent.com/Gruniek/nixie/master/0.1/get_data.sh
 
 echo "Configuration file";
 echo "[NIXIE]" >> $config_file
