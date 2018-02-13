@@ -33,3 +33,4 @@ else
     esac
 done
 fi
+echo "ok";
