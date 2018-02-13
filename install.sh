@@ -9,6 +9,7 @@ echo " #   #  #  #   #  #  ####";
 echo " ##########################";
 echo " ";
 
+config_file="config.ini";
 
 FILE="/tmp/out.$$"
 GREP="/bin/grep"
@@ -55,45 +56,45 @@ wget https://raw.githubusercontent.com/Gruniek/nixie/master/deamon.sh
 wget https://raw.githubusercontent.com/Gruniek/nixie/master/get_data.sh
 
 echo "Configuration file";
-echo "[NIXIE]" >> conf.ini
+echo "[NIXIE]" >> $config_file
 
 echo "Server name/id";
 read -p keyboard
-echo "server_id=$keyboard" >> conf.ini
+echo "server_id=$keyboard" >> $config_file
 echo " ";
 echo "SQL User  : ";
 read -p keyboard
-echo "sql_user=$keyboard" >> conf.ini
+echo "sql_user=$keyboard" >> $config_file
 echo " ";
 echo "SQL Pass  : ";
 read -p keyboard
-echo "sql_pass=$keyboard" >> conf.ini
+echo "sql_pass=$keyboard" >> $config_file
 echo " ";
 echo "SQL Host  : ";
 read -p keyboard
-echo "sql_host=$keyboard" >> conf.ini
+echo "sql_host=$keyboard" >> $config_file
 echo " ";
 echo "SQL table : ";
 read -p keyboard
-echo "sql_table=$keyboard" >> conf.ini
+echo "sql_table=$keyboard" >> $config_file
 echo " ";
 echo "Refresh data logger / sec : ";
 read -p keyboard
-echo "refresh_data=$keyboard" >> conf.ini
+echo "refresh_data=$keyboard" >> $config_file
 echo " ";
 echo "Update er / sec : ";
 read -p keyboard
-echo "refresh_data=$keyboard" >> conf.ini
+echo "refresh_data=$keyboard" >> $config_file
 echo " ";
 echo " ";
 
 
 
-echo " " >> conf.ini
-echo "[Monitoring]" >> conf.ini
-echo "cpu=True" >> conf.ini
-echo "mem=True" >> conf.ini
-echo "hdd=True" >> conf.ini
-echo "eth=False" >> conf.ini
-echo "user=False" >> conf.ini
+echo " " >> $config_file
+echo "[Monitoring]" >> $config_file
+echo "cpu=True" >> $config_file
+echo "mem=True" >> $config_file
+echo "hdd=True" >> $config_file
+echo "eth=False" >> $config_file
+echo "user=False" >> $config_file
 
