@@ -27,10 +27,19 @@ else
    while true; do
     read -p "Do you wish to install Nixe?" yn
     case $yn in
-        [Yy]* ) echo "okok"; break;;
+        [Yy]* ) echo " "; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
 done
 fi
-echo "ok";
+
+# CHECH IF MYSQL EXIST
+echo "Checking if mysql client are installed...";
+
+if hash mysql 2>/dev/null; then
+        echo "mysql-client found";
+else
+        echo "mysql-client not found";
+fi
+
