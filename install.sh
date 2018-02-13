@@ -41,5 +41,38 @@ if hash mysql 2>/dev/null; then
         echo "mysql-client found";
 else
         echo "mysql-client not found";
+        apt-get update
+        apt-get -y install mysql-client
+        echo "done."
 fi
 
+echo "Installing Nixie into /opt/nixie";
+mkdir /opt/nixie
+cd /opt/nixie
+wget https://raw.githubusercontent.com/Gruniek/nixie/master/nixie.sh
+wget https://raw.githubusercontent.com/Gruniek/nixie/master/deamon.sh
+wget https://raw.githubusercontent.com/Gruniek/nixie/master/get_data.sh
+
+echo "Configuration file";
+echo "[NIXIE]" >> conf.ini
+
+echo "Server name/id";
+read keyboard
+echo "server_id=$keyboard" >> conf.ini
+
+
+echo "SQL User";
+read keyboard
+echo "sql_user=$keyboard" >> conf.ini
+
+echo "SQL Pass";
+read keyboard
+echo "sql_pass=$keyboard" >> conf.ini
+
+echo "SQL Host";
+read keyboard
+echo "sql_host=$keyboard" >> conf.ini
+
+echo "SQL table";
+read keyboard
+echo "sql_table=$keyboard" >> conf.ini
