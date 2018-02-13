@@ -9,7 +9,7 @@ echo " #   #  #  #   #  #  ####";
 echo " ##########################";
 echo " ";
 
-config_file="config.ini";
+config_file="configuration.ini";
 
 FILE="/tmp/out.$$"
 GREP="/bin/grep"
@@ -59,31 +59,31 @@ echo "Configuration file";
 echo "[NIXIE]" >> $config_file
 
 echo "Server name/id";
-read -p keyboard
+read keyboard
 echo "server_id=$keyboard" >> $config_file
 echo " ";
 echo "SQL User  : ";
-read -p keyboard
+read keyboard
 echo "sql_user=$keyboard" >> $config_file
 echo " ";
 echo "SQL Pass  : ";
-read -p keyboard
+read keyboard
 echo "sql_pass=$keyboard" >> $config_file
 echo " ";
 echo "SQL Host  : ";
-read -p keyboard
+read keyboard
 echo "sql_host=$keyboard" >> $config_file
 echo " ";
 echo "SQL table : ";
-read -p keyboard
+read keyboard
 echo "sql_table=$keyboard" >> $config_file
 echo " ";
 echo "Refresh data logger / sec : ";
-read -p keyboard
+read keyboard
 echo "refresh_data=$keyboard" >> $config_file
 echo " ";
 echo "Update er / sec : ";
-read -p keyboard
+read keyboard
 echo "refresh_data=$keyboard" >> $config_file
 echo " ";
 echo " ";
