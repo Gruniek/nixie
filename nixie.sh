@@ -21,7 +21,3 @@ chmod +x installer.sh
 rm -rf /tmp/installer.sh
 rm -rf /tmp/version.txt
 cd $dir_now;
-
-
-
-
