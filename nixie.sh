@@ -3,15 +3,18 @@
 #CONFIG
 #=======#
 #ID SERVER
-server_id=`hostname`;
+server_id=$(awk -F "=" '/server_name/ {print $2}' conf.ini);
 
 #MYSQL
-sql_user='';
-sql_pass='';
-sql_host='';
-sql_table='';
+sql_user=$(awk -F "=" '/sql_user/ {print $2}' conf.ini);
+sql_pass=$(awk -F "=" '/sql_pass/ {print $2}' conf.ini);
+sql_host=$(awk -F "=" '/sql_host/ {print $2}' conf.ini);
+sql_table=$(awk -F "=" '/sql_table/ {print $2}' conf.ini);
 
 #UPDATE SERVER
+update_delay=$(awk -F "=" '/update_delay/ {print $2}' conf.ini);
+
+
 
 mem_total=`cat /proc/meminfo | grep -ohe 'MemTotal[s:][: ].*' | awk '{ print $2 }'`;
 nb_cpu=`grep processor /proc/cpuinfo | wc -l`;
@@ -20,7 +23,7 @@ nb_cpu=`grep processor /proc/cpuinfo | wc -l`;
 
 
 while true; do
-	sleep 1
+	sleep $update_delay;
 
 	unix_time=`date +'%s'`;
 
