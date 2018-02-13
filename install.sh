@@ -27,7 +27,7 @@ if [ -f $FILE ]; then
    exit 1
 else
    while true; do
-    read -p "Do you wish to install Nixe?" yn
+    read -p "Do you wish to install Nixe? : " yn
     case $yn in
         [Yy]* ) echo " "; break;;
         [Nn]* ) exit;;
