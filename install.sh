@@ -21,7 +21,8 @@ fi
 
 FILE=/opt/nixie/nixie.sh     
 if [ -f $FILE ]; then
-   echo "Nixieare already installed."
+   echo "Nixieare already installed.";
+   echo "For a complete reinstallation : Please remove the "/opt/nixie" directory.";
    exit 1
 else
    while true; do
@@ -57,36 +58,42 @@ echo "Configuration file";
 echo "[NIXIE]" >> conf.ini
 
 echo "Server name/id";
-read keyboard
+read -p keyboard
 echo "server_id=$keyboard" >> conf.ini
-
 echo " ";
 echo "SQL User  : ";
-read keyboard
+read -p keyboard
 echo "sql_user=$keyboard" >> conf.ini
 echo " ";
 echo "SQL Pass  : ";
-read keyboard
+read -p keyboard
 echo "sql_pass=$keyboard" >> conf.ini
 echo " ";
 echo "SQL Host  : ";
-read keyboard
+read -p keyboard
 echo "sql_host=$keyboard" >> conf.ini
 echo " ";
 echo "SQL table : ";
-read keyboard
+read -p keyboard
 echo "sql_table=$keyboard" >> conf.ini
 echo " ";
 echo "Refresh data logger / sec : ";
-read keyboard
+read -p keyboard
+echo "refresh_data=$keyboard" >> conf.ini
+echo " ";
+echo "Update er / sec : ";
+read -p keyboard
 echo "refresh_data=$keyboard" >> conf.ini
 echo " ";
 echo " ";
-while true; do
-    read -p "Enable the the data logger ? : " yn
-    case $yn in
-        [Yy]* ) echo "logger_enable=True"; break;;
-        [Nn]* ) echo "logger_enable=False"; break;;
-        * ) echo "Please answer yes or no.";;
-esac
+
+
+
+echo " " >> conf.ini
+echo "[Monitoring]" >> conf.ini
+echo "cpu=True" >> conf.ini
+echo "mem=True" >> conf.ini
+echo "hdd=True" >> conf.ini
+echo "eth=False" >> conf.ini
+echo "user=False" >> conf.ini
 
