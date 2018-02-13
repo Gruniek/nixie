@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+version="0.1";
 
 FILE="/tmp/out.$$"
 GREP="/bin/grep"
