@@ -27,7 +27,7 @@ else
    while true; do
     read -p "Do you wish to install Nixe?" yn
     case $yn in
-        [Yy]* ) break;;
+        [Yy]* ) echo "okok"; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
